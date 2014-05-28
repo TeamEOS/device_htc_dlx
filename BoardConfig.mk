@@ -30,8 +30,8 @@ include device/htc/msm8960-common/BoardConfigCommon.mk
 TARGET_SPECIFIC_HEADER_PATH := device/htc/dlx/include
 
 # Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
+TARGET_GLOBAL_CFLAGS += -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfloat-abi=softfp
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := dlx
