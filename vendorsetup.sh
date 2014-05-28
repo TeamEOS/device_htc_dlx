@@ -1,1 +1,3 @@
-add_lunch_combo cm_dlx-eng
+for i in eng userdebug user; do
+    add_lunch_combo full_dlx-${i}
+done
