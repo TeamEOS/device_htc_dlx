@@ -30,8 +30,8 @@ include device/htc/msm8960-common/BoardConfigCommon.mk
 TARGET_SPECIFIC_HEADER_PATH := device/htc/dlx/include
 
 # Flags
-TARGET_GLOBAL_CFLAGS += -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfloat-abi=softfp
+TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := dlx
@@ -51,10 +51,11 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := cyanogenmod_dlx_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 
-# Build and optimization
+# Build and Optimization flags
 BOARD_USES_LIBQC_OPT := true
-#TARGET_GCC_VERSION_EXP := 4.8-linaro
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := 4.8-linaro
+ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
+# TARGET_GCC_VERSION_EXP := 4.9-linaro
+# TARGET_KERNEL_CUSTOM_TOOLCHAIN := 4.9-linaro
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true
