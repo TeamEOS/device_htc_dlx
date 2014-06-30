@@ -52,10 +52,9 @@ TARGET_KERNEL_CONFIG := cyanogenmod_dlx_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 
 # Build and Optimization flags
-BOARD_USES_LIBQC_OPT := true
 ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
-# TARGET_GCC_VERSION_EXP := 4.9-linaro
-# TARGET_KERNEL_CUSTOM_TOOLCHAIN := 4.9-linaro
+TARGET_GCC_VERSION_EXP := 4.8-linaro
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := 4.9-linaro-a15
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true
