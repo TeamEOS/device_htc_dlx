@@ -33,6 +33,10 @@ PRODUCT_PACKAGES += \
     init.dlx.usb.rc \
     ueventd.dlx.rc
 
+# TWRP fstab
+PRODUCT_COPY_FILES += \
+    device/htc/dlx/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Post boot service
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init.post_boot.sh:system/etc/init.post_boot.sh
@@ -173,3 +177,5 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalv
 
 # call hwui memory config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+
+
