@@ -123,7 +123,6 @@ BOARD_RECOVERY_SWIPE := true
 
 # TWRP
 TARGET_RECOVERY_INITRC := device/htc/dlx/recovery/init-twrp.rc
-TARGET_PREBUILT_KERNEL := device/htc/dlx/kernAl
 DEVICE_RESOLUTION := 1080x1920
 TW_INCLUDE_DUMLOCK := true
 RECOVERY_SDCARD_ON_DATA := true
