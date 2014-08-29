@@ -129,3 +129,4 @@ TW_NO_USB_STORAGE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 HAVE_SELINUX := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_FSTAB := device/htc/dlx/rootdir/etc/fstab.dlx
