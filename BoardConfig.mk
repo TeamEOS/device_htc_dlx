@@ -51,11 +51,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := cyanogenmod_dlx_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 
-# Build and Optimization flags
-ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
-TARGET_GCC_VERSION_EXP := 4.8-linaro
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := 4.9-linaro-a15
-
 # Audio
 BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
