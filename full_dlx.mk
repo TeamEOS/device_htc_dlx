@@ -24,6 +24,86 @@ $(call inherit-product, device/htc/dlx/device.mk)
 $(call inherit-product, vendor/eos/config/cdma.mk)
 $(call inherit-product, vendor/eos/config/common_full_phone.mk)
 
+# The gps config appropriate for this device
+PRODUCT_COPY_FILES += device/htc/dlx/gps/gps.conf:system/etc/gps.conf
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.dlx \
+    init.qcom.firmware_links.sh \
+    init.dlx.rc \
+    init.dlx.usb.rc \
+    ueventd.dlx.rc
+
+# Post boot service
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init.post_boot.sh:system/etc/init.post_boot.sh
+
+# Recovery
+PRODUCT_PACKAGES += \
+    lpm.rc \
+    charger \
+    choice_fn \
+    offmode_charging \
+    chargeled \
+    init.recovery.dlx.rc
+
+PRODUCT_PACKAGES += \
+    battery_0.png \
+    battery_1.png \
+    battery_2.png \
+    battery_3.png \
+    battery_4.png \
+    battery_fail.png \
+    battery_full.png
+
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
+# NFCEE access control
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    NFCEE_ACCESS_PATH := device/htc/dlx/configs/nfcee_access.xml
+else
+    NFCEE_ACCESS_PATH := device/htc/dlx/configs/nfcee_access_debug.xml
+endif
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+
+# QC thernald config
+PRODUCT_COPY_FILES += device/htc/dlx/configs/thermald.conf:/system/etc/thermald.conf
+
+# Media configs
+PRODUCT_COPY_FILES += device/htc/dlx/configs/AudioBTID.csv:system/etc/AudioBTID.csv
+PRODUCT_COPY_FILES += device/htc/dlx/configs/AudioBTIDnew.csv:system/etc/AudioBTIDnew.csv
+
+# wifi config
+PRODUCT_COPY_FILES += \
+    device/htc/dlx/configs/calibration:/system/etc/calibration \
+    device/htc/dlx/configs/calibration.gpio4:/system/etc/calibration.gpio4
+
+# Audio config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+
+# Sound configs
+PRODUCT_COPY_FILES += \
+    device/htc/dlx/dsp/soundimage/srs_bypass.cfg:system/etc/soundimage/srs_bypass.cfg \
+    device/htc/dlx/dsp/soundimage/srsfx_trumedia_51.cfg:system/etc/soundimage/srsfx_trumedia_51.cfg \
+    device/htc/dlx/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
+    device/htc/dlx/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg \
+    device/htc/dlx/dsp/soundimage/srsfx_trumedia_voice.cfg:system/etc/soundimage/srsfx_trumedia_voice.cfg \
+    device/htc/dlx/dsp/soundimage/srs_geq10.cfg:system/etc/soundimage/srs_geq10.cfg \
+    device/htc/dlx/dsp/soundimage/srs_global.cfg:system/etc/soundimage/srs_global.cfg
+
+PRODUCT_COPY_FILES += \
+    device/htc/dlx/dsp/snd_soc_msm/snd_soc_msm_2x_Fusion3:/system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 
+
 # Copy Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/eos/prebuilt/common/bootanimation/1080.zip:system/media/bootanimation.zip
