@@ -42,20 +42,14 @@ PRODUCT_COPY_FILES += \
 # Recovery
 PRODUCT_PACKAGES += \
     lpm.rc \
-    charger \
     choice_fn \
-    offmode_charging \
+    detect_key \
+    power_test \
     chargeled \
+    offmode_charging \
+    offmode_charging_res_images \
+    offmode_charging_warn_res_images \
     init.recovery.dlx.rc
-
-PRODUCT_PACKAGES += \
-    battery_0.png \
-    battery_1.png \
-    battery_2.png \
-    battery_3.png \
-    battery_4.png \
-    battery_fail.png \
-    battery_full.png
 
 PRODUCT_PACKAGES += \
     libnetcmdiface
