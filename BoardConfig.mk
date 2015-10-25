@@ -86,32 +86,6 @@ BOARD_RIL_CLASS := ../../../device/htc/dlx/ril
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/dlx/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    akmd.te \
-    device.te \
-    drmserver.te \
-    file_contexts \
-    hcheck.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    mdm_helper.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    netmgrd.te \
-    property_contexts \
-    qmuxd.te \
-    radio.te \
-    recovery.te \
-    surfaceflinger.te \
-    system_server.te \
-    tee.te \
-    thermal-engine.te \
-    thermald.te \
-    vold.te \
-    wpa.te
-
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
