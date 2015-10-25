@@ -1,9 +1,9 @@
 [
   {
     "remote": "github",
-    "repository": "wrapped/kernel_htc_m7",
+    "repository": "CyanogenMod/android_kernel_htc_m7",
     "target_path": "kernel/htc/m7",
-    "revision": "lp5.1"
+    "revision": "cm-13.0"
   },
   {
     "repository": "device_htc_msm8960-common",
@@ -11,14 +11,22 @@
   },
   {
     "repository": "vendor_htc",
-    "target_path": "vendor/htc"
+    "target_path": "vendor/htc",
+    "revision": "lp5.1"
   },
   {
-    "repository": "device_qcom_common",
-    "target_path": "device/qcom/common"
+    "repository": "CyanogenMod/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision": "cm-13.0"
   },
   {
-    "repository": "hardware_qcom_fm",
-    "target_path": "hardware/qcom/fm"
+    "repository": "CyanogenMod/android_device_qcom_sepolicy",
+    "target_path": "device/qcom/sepolicy",
+    "revision": "cm-13.0"
+  },
+  {
+    "repository": "CyanogenMod/android_hardware_qcom_fm",
+    "target_path": "hardware/qcom/fm",
+    "revision": "cm-13.0"
   }
 ]
