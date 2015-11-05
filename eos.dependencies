@@ -12,7 +12,7 @@
   {
     "repository": "vendor_htc",
     "target_path": "vendor/htc",
-    "revision": "lp5.1"
+    "revision": "mm6.0"
   },
   {
     "remote": "github",
